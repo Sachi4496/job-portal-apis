@@ -24,7 +24,7 @@ router.get("",async function (req, res) {
 })
 router.get("/:id",async function (req, res) {
     try{
-        const company = await Company.findById(req.params.id).populate({path:"city_id", select:"city_name"}).lean().exec();
+        const company = await Company.findById(req.params.id).populate({path:"city_id", select:"city_name dec"}).lean().exec();
         return res.status(200).send(company);
     }
     catch(err){
