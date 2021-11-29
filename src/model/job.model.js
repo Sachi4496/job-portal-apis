@@ -5,6 +5,7 @@ const jobSchema = new mongoose.Schema(
     skills:{ type: 'string',required: true},
     work:{ type: 'string',required: false},
     notice_pre:{ type: 'Number',required: false},
+    rating:{ type: 'Number',required: true},
     company_id:{
         type: mongoose.Schema.Types.ObjectId,
         ref:"company",

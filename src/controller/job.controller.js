@@ -51,23 +51,23 @@ router.get("/skill/:id",async function (req, res) {
     }
 })
 
-// router.get("/sort",async function (req, res) {
-//     try{
-//         const job = await Job.find().sort({"rating":-1}).lean().exec();
-//         return res.status(200).send(job);
-//     }
-//     catch(err){
-//         return res.status(500).send(err);
-//     }
-// })
-// router.get("/dec/:id",async function (req, res) {
-//     try{
-//         const job = await Job.findById(req.params.id).lean().exec();
-//         return res.status(200).send(job);
-//     }
-//     catch(err){
-//         return res.status(500).send(err);
-//     }
-// })
+router.get("/sort",async function (req, res) {
+    try{
+        const job = await Job.find().sort({"rating":-1}).lean().exec();
+        return res.status(200).send(job);
+    }
+    catch(err){
+        return res.status(500).send(err);
+    }
+})
+router.get("/dec/:id",async function (req, res) {
+    try{
+        const job = await Job.findById(req.params.id).lean().exec();
+        return res.status(200).send(job);
+    }
+    catch(err){
+        return res.status(500).send(err);
+    }
+})
 
 module.exports = router;
